@@ -65,13 +65,46 @@ print(sesgo)
 
 # Ejercicio 7
 string = input("Hola, ingresa una palabra o frase: ")
-if string[-1].lower() in ["a", "e", "i", "o", "u"]: #la funcion tomar el ultimo caracter y lo transforma en minuscula para compararlo con la lista de vocales
+if string[-1].lower() in ["a", "e", "i", "o", "u"]: #los corchetes en valor [-1] toman el ultimo caracter porque cuentan desde el final de la cadena y lo transforma en minuscula para compararlo con la lista de vocales
     print(string + "!")
 else:
     print(string)
-"""
+
 # Ejercicio 8
+nombre = input("Ingrese su nombre: ")
+print("Seleccione 1, 2 o 3:")
+print("1. Si quiere su nombre en MAYUSCULAS.")
+print("2. Si quiere su nombre en minúsculas.")
+print("3. Si quiere su nombre con la primera letra mayúscula.")
+opcion = int(input("Opcion elegida: "))
+
+if opcion == 1:
+    print(nombre.upper())
+elif opcion == 2:
+    print(nombre.lower())
+elif opcion == 3:
+    print(nombre.title())
+else:
+    print("Ingreso una opcion incorrecta, ejecute el programa nuevamente.")
+    pass
 
 # Ejercicio 9
+magnitud = float(input("Ingrese la magnitud del terremoto para conocer su clasificacion segun la escala de Richter: "))
+clasificacion = ""
+if magnitud < 3:
+    clasificacion = "Muy leve"
+elif 3 <= magnitud < 4:
+    clasificacion = "Leve"
+elif 4 <= magnitud < 5:
+    clasificacion = "Moderado"
+elif 5 <= magnitud < 6:
+    clasificacion = "Fuerte"
+elif 6 <= magnitud < 7:
+    clasificacion = "Muy Fuerte"
+elif magnitud >= 7:
+    clasificacion = "Extremo"
+
+print(f"Clasificacion del terremoto: {clasificacion.upper()}")
+"""
 
 # Ejercicio 10
