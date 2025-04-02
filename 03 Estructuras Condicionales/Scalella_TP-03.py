@@ -105,6 +105,58 @@ elif magnitud >= 7:
     clasificacion = "Extremo"
 
 print(f"Clasificacion del terremoto: {clasificacion.upper()}")
-"""
+
 
 # Ejercicio 10
+from datetime import date #modulo para trabajar con fechas
+
+print("Hola voy a decirte en que estacion del año te encontras, en funcion del hemisferio en el que te encontras, dia y mes actuales (para el 2025). ")
+print("¿En que hemisferio te encontras? ¿Norte o Sur?")
+hemisferio = input("Responde N o S: ").lower()
+mes = int(input("¿Que mes del año es hoy? (1-12): "))
+dia = int(input("¿Que dia del mes? (1-31): "))
+fecha = date(2000, mes, dia)
+estacion = ""
+
+if hemisferio == "n":
+    inicio_invierno_norte = date(2000, 12, 21)
+    fin_invierno_norte = date(2000, 3, 20)
+    inicio_primavera_norte = date(2000, 3, 21)
+    fin_primavera_norte = date(2000, 6, 20)
+    inicio_verano_norte = date(2000, 6, 21)
+    fin_verano_norte = date(2000, 9, 20)
+    inicio_otono_norte = date(2000, 9, 21)
+    fin_otono_norte = date(2000, 12, 20)
+
+    if inicio_invierno_norte <= fecha <= fin_invierno_norte: 
+        estacion = "Invierno"
+    elif inicio_primavera_norte <= fecha <= fin_primavera_norte:
+        estacion = "Primavera"
+    elif (date(2000, 1, 1) <= fecha <= date(2000, 3, 20)) or (date(2000, 12, 21) <= fecha <= date(2000, 12, 31)):
+        estacion = "Verano"
+    elif inicio_otono_norte <= fecha <= fin_otono_norte:
+        estacion = "Otoño"
+
+elif hemisferio == "s":
+    inicio_invierno_sur = date(2000, 6, 21)
+    fin_invierno_sur = date(2000, 9, 20)
+    inicio_primavera_sur = date(2000, 9, 21)
+    fin_primavera_sur = date(2000, 12, 20)
+    inicio_verano_sur = date(2000, 12, 21)
+    fin_verano_sur = date(2000, 3, 20)
+    inicio_otono_sur = date(2000, 3, 21)
+    fin_otono_sur = date(2000, 6, 20)
+
+    if inicio_invierno_sur <= fecha <= fin_invierno_sur:
+        estacion = "Invierno"
+    elif inicio_primavera_sur <= fecha <= fin_primavera_sur:
+        estacion = "Primavera"
+    elif (date(2000, 1, 1) <= fecha <= date(2000, 3, 20)) or (date(2000, 12, 21) <= fecha <= date(2000, 12, 31)):
+        estacion = "Verano"
+    elif inicio_otono_sur <= fecha <= fin_otono_sur:
+        estacion = "Otoño"
+else:
+    print("Ingresaste una opcion no valida, reinicia el programa.")
+
+print(f"En el hemisferio {'Norte' if hemisferio == 'n' else 'Sur'} estas en: {estacion}")
+"""
