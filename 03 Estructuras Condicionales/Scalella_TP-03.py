@@ -1,6 +1,6 @@
 # TP3 Matias Scalella - Correr las tres comillas para verificar uno o uno los ejercicios
 # Ejercicio 1 
-"""
+
 edad = int(input("Hola, ingrese su edad: "))
 if edad >= 18:
     print("Es mayor de edad")
@@ -159,4 +159,3 @@ else:
     print("Ingresaste una opcion no valida, reinicia el programa.")
 
 print(f"En el hemisferio {'Norte' if hemisferio == 'n' else 'Sur'} estas en: {estacion}")
-"""
