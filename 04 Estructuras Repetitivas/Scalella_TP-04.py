@@ -41,10 +41,27 @@ while numero != 0: # Mientras el numero ingresado sea distinto a cero, el bucle 
     suma += numero # Suma el numero ingresado a la variable suma, que funciona como una variable de acumulacion
 
 print(f"La suma de todos los numeros ingresados es: {suma}") # Cuando el numero ingresado es 0, se imprime el resultado de la variable de acumulacion
-"""
+
 # Ejercicio 5
+import random
+
+print("Hola, en este juego tenes que adivinar un numero entre 0 y 9.")
+numero_ganador = random.randint(0, 9) # almaceno un numero al azar del modulo random
+numero_usuario = int(input("Ingresa un numero a ver si adivinas: ")) #primer intento del jugador
+intentos = 1 # contador de intentos
+
+while numero_usuario != numero_ganador:
+    numero_usuario = int(input("Lo siento, ese no es el numero. Intenta nuevamente: ")) #si el usuario no acerto, se le pide un nuevo numero
+    intentos += 1 # incrementador de intentos
+
+print(f"Muy bien! \U0001F389 Acertaste!\nEs el numero: {numero_ganador} !\nAdivinaste en {intentos} intentos." ) # Mensaje que muestra el numero, los intentos y un emoji
+
 # Ejercicio 6
+for pares_de_cero_a_cien in range (100, -1, -2): # Con un bucle for inicio en 100, hasta el -1 (sin incluir) y con paso -2 (resta de a dos)
+    print(pares_de_cero_a_cien)
+"""
 # Ejercicio 7
+
 # Ejercicio 8
 # Ejercicio 9
 # Ejercicio 10
