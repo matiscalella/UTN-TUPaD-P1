@@ -1,4 +1,4 @@
-"""# TP 4 - Estructuras repetitivas
+# TP 4 - Estructuras repetitivas
 # Matias Scalella
 # Ejercicio 1
 for x in range(0, 101):
@@ -108,6 +108,23 @@ for x in range (numeros_a_ingresar):
 
 promedio = suma / numeros_a_ingresar
 print(f"El promedio de los {numeros_a_ingresar} numeros que ingresaste es: {promedio}.")
-"""
+
 # Ejercicio 10
+print("Invierto los digitos de cualquier numero que ingreses.")
+numero_ingresado = int(input("Ingresa un numero: "))
+numero = abs(numero_ingresado) # Si el usuario ingresa un numero negativo, lo transforma en positivo
+
+longitud_numero = len(str(numero)) # obtengo la longitud del numero, convirtiendolo en un string
+digito = 0 # variable para almacenar cada digito durante el ciclo
+numero_invertido = "" # variable para almacenar los digitos en orden inverso en cada iteracion como string
+
+for x in range(longitud_numero):
+    digito = numero % 10 # el primer digito invertido es el ultimo caracter del numero ingresado, obtengo ese digito como resto de la division por 10
+    numero_invertido += str(digito) # acumulador de cada digito transformado en string
+    numero = numero // 10 # operacion para obtener la parte entera de la division por 10
+
+if numero_ingresado < 0: # Si el numero ingresado era negativo, este condicional le devuelve el signo "-"
+    numero_invertido = "-" + numero_invertido
+
+print(f"El numero {numero_ingresado} invertido es: {numero_invertido}")
 
