@@ -59,10 +59,55 @@ print(f"Muy bien! \U0001F389 Acertaste!\nEs el numero: {numero_ganador} !\nAdivi
 # Ejercicio 6
 for pares_de_cero_a_cien in range (100, -1, -2): # Con un bucle for inicio en 100, hasta el -1 (sin incluir) y con paso -2 (resta de a dos)
     print(pares_de_cero_a_cien)
-"""
+
 # Ejercicio 7
+print("Hola, voy a sumar todos los numeros enteros positivos entre 0 y un numero que ingreses ahora.")
+numero = int(input("Ingresa un numero: "))
+suma = 0
+contador = 0
+
+if numero > 0:
+    while contador <= numero: # Mientras el contador sea menor al numero ingresado...
+        suma += contador #.. suma acumula los numeros del 0 en adelante en cada iteracion del bucle
+        contador += 1 # el contador aumenta su valor al final de cada ciclo 
+else: 
+    print("Ingresaste un numero que no es positivo o no es entero. Reinicia el programa.")
+    exit() # Si el numero no es valido, se termina la ejecucion del programa
+
+print(f"La suma de los numeros enteros entre 0 y {numero} es: {suma}")
 
 # Ejercicio 8
+print("Hola, soy un clasificador de numeros (pares, impares, positivos y negativos).")
+positivos = negativos = pares = impares = numeros_ingresados = 0 # declaro las variables acumuladoras segun la clasificacion de los numeros
+
+for x in range (1, 101): # asigno un rango de 1 a 101 (sin incluir) para que el ciclo se repita 100 veces. Modificar el 101 para testear el programa.
+    numero = int(input("Ingresa un numero: "))
+    if numero % 2 == 0:
+        pares += 1
+    else: # si el numero no es par, es impar
+        impares += 1
+    if numero > 0:
+        positivos += 1
+    elif numero < 0: # uso elif porque si el numero ingresado es 0, no es ni positivo ni negativo
+        negativos += 1
+
+print(f"RESULTADOS\nIngresaste {numeros_ingresados} numeros en total.")
+print(f"{pares} numeros pares.")
+print(f"{impares} numeros impares.")
+print(f"{positivos} numeros positivos.")
+print(f"{negativos} numeros negativos.")
+
 # Ejercicio 9
+suma = 0 # inicializo la variable acumuladora
+numeros_a_ingresar = 100 # esta variable modifica la cantidad de numeros a ingresar por el usuario y determina la cantidad de veces que se repetira el ciclo for
+print(f"Hola voy a calcular la media de los {numeros_a_ingresar} numeros enteros que ingreses a continuacion.")
+
+for x in range (numeros_a_ingresar):
+    numero = int(input("Ingresa un numero: "))
+    suma += numero # suma añade a su valor actual el valor del numero ingresado por el usuario
+
+promedio = suma / numeros_a_ingresar
+print(f"El promedio de los {numeros_a_ingresar} numeros que ingresaste es: {promedio}.")
+"""
 # Ejercicio 10
 
