@@ -1,4 +1,4 @@
-"""## Ejercicio 1
+## Ejercicio 1
 # Funciones
 def imprimir_hola_mundo():
     print("Hola Mundo!")
@@ -139,7 +139,25 @@ print(f"{celsius:.2f} °C equivale a: {fahrenheit:.2f} °F.")
 
 ## Ejercicio 10
 # Funciones
+def validar_numero(mensaje): # Funcion para validar que el usuario ingrese unicamente numeros
+    while True:
+        try:
+            num = float(input(mensaje))
+            return num
+        except ValueError:
+            print("ERROR. Ingreso inválido. Debe ser un número.")
+
 def calcular_promedio(a, b, c):
-    pass
-"""
+    return (a + b+ c) / 3
+
 # Programa Principal
+print("Hola, calculo el promedio de 3 numeros que ingreses: ")
+num1 = validar_numero("Ingresa el primer numero: ")
+print("Primer numero validado, podes ingresar el segundo.")
+num2 = validar_numero("Ingresa el segundo numero: ")
+print("Segundo numero validado, podes ingresar el tercero.")
+num3 = validar_numero("Ingresa el tercer numero: ")
+print("Validacion de numeros OK.")
+print("\n--- RESULTADO ---")
+print(f"Calculo el promedio de {num1}, {num2} y {num3}.")
+print(f"Promedio: {calcular_promedio(num1, num2, num3):.2f}")
