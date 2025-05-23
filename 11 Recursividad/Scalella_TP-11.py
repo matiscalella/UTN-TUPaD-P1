@@ -60,3 +60,66 @@ print(decimal_a_binario(8))
 # decimal_a_binario(1) devuelve decimal_a_binario(0) + "1" -> (1 % 2 = 1)
 # decimal_a_binario(0) alcanza el caso base y devuelve "" un string vacio
 # Al desapilarse, la impresion es 1000 con lo cual no es necesario invertir los restos como si utilizaramos bucles
+
+
+# Ejercicio 5
+# Funcion recursiva que evalua si la palabra ingresada es un palindromo
+def es_palindromo(palabra):
+    if len(palabra) == 0 or len(palabra) == 1:
+        return True
+    if palabra[0] == palabra[-1]:
+        palabra = palabra[1:-1] # elimina el primer y ultimo caracter de la palabra ingresada para volver a compararlos
+        return es_palindromo(palabra)
+    return False
+        
+palabra_usuario = input("Ingrese una palabra para saber si es un palindromo: ")
+
+if es_palindromo(palabra_usuario):
+    print(f"'{palabra_usuario}' es un palindromo.")
+
+else:
+   print(f"'{palabra_usuario}' NO es un palindromo.") 
+
+# Ejercicio 6
+# Funcion recursiva que suma los digitos ingresados de un numero.
+def suma_digitos(n):
+    if n < 10: # Caso base: el numero es menor a 10, es decir, tiene un solo digito, entonces retornar el numero
+        return n
+    else:
+        return n % 10 + suma_digitos(n//10) # Paso recursivo: primero obtengo el ultimo digito y llamo nuevamente a la funcion para n sin el ultimo digito
+
+# Testeo con valores propuestos en la guia
+print(suma_digitos(1234))
+print(suma_digitos(9))
+print(suma_digitos(8))
+
+# Ejercicio 7
+# Escribí una función recursiva contar_bloques(n) que reciba el número de bloques en el nivel más bajo y devuelva el total de bloques que necesita un niño para construir una pirámide.
+def contar_bloques(n):
+    if n == 1:
+        return 1
+    else:
+        return n + contar_bloques(n-1)
+    
+bloques = int(input("Ingrese la cantidad de bloques que tendra la base de la piramide: "))
+print(contar_bloques(bloques))
+
+# Ejercicio 8
+# Función recursiva que recibe un número entero positivo (numero) y un dígito (entre 0 y 9), y devuelve cuántas veces aparece ese dígito dentro del número.
+def contar_digito(numero, digito):
+    if numero < 10:
+        if numero == digito: # Caso base: si el ultimo digito es igual al digito a comparar devolver 1, sino devolver 0 al final
+            return 1
+        else:
+            return 0
+    else:
+        if numero % 10 == digito: # Paso recursivo si el digito coincide con el valor a comparar
+            return 1 + contar_digito(numero//10, digito)
+        else: # Paso recursivo si el digito NO coincide con el valor a comparar
+            return contar_digito(numero//10, digito)
+
+numero_usuario = int(input("Ingrese un numero: "))
+digito_usuario = int(input("Ingrese el digito a contar: "))
+resultado = contar_digito(numero_usuario, digito_usuario)
+
+print(f"El numero {numero_usuario} tiene {resultado} veces el numero: {digito_usuario}")
